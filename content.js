@@ -23,9 +23,21 @@ button.addEventListener('click', function() {
 // Initial injection of the button
 document.body.appendChild(button);
 
+let currentPage = location.href;
+// Listen for URL changes
+setInterval(function()
+{
+    if (currentPage != location.href) {
+        // page has changed, set new page as 'current'
+        currentPage = location.href;
+        // Re-inject the button
+        document.body.appendChild(button);
+        console.log("URL is changed.");
+    }
+}, 500);
+
 // Listen for scroll events
 window.onscroll = function() {
-    // Re-inject the button when scrolling occurs
     document.body.appendChild(button);
-    console.log("Scroll");
-};
+    console.log("Window is scrolling.");
+}
