@@ -4,7 +4,6 @@
     "version": "1.0",
     "description": "Injects a floating button.",
     "action": {
-      "default_popup": "popup.html"
     },
     "permissions": [
       "activeTab"
